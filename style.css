@@ -1,0 +1,748 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bodyColor : #0d1418;
+    --mainColor : #ff4900;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    color: var(--mainColor);
+    transition: 1s;
+}
+
+.section-head {
+    width: 50%;
+    text-align: center;
+}
+
+.section-header {
+    margin: 0 0 30px 0;
+    color: #6b6b6b;
+    font-size: 50px;
+    position: relative;
+}
+
+.section-header::after {
+   content: '';
+   width: 110px;
+   height: 5px;
+   background: var(--mainColor);
+   left: 50%;
+   bottom: -10px;
+   position: absolute;
+   transform: translate(-50%, -50%);
+}
+
+.section-para {
+    color: #626262;
+    line-height: 25px;
+}
+
+
+/***************** Header section *****************/
+#header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#header .nav-bar {
+    width: 100%;
+    padding: 20px 40px;
+    background: #1521288a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 15px #000;
+    transition: 1s;
+}
+
+#header .brand a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#header .nav-list ul {
+    display: flex;
+    list-style: none;
+}
+
+#header .nav-list ul li a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin-right: 40px;
+    /* padding: 30px 0; */
+    transition: .5s;
+}
+
+#header .nav-list ul li a:hover {
+    color: var(--mainColor);
+}
+
+
+/***************** Hero section *****************/
+
+#hero .container {
+    background: #0d1418;
+}
+
+#hero .hero-content {
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#hero .left-side {
+    color: #bfbdbd;
+    text-transform: capitalize;
+    padding: 40px;
+    box-shadow: 0px 0px 30px #000;
+}
+
+#hero .left-side h2 {
+    font-size: 30px;
+}
+
+#hero .left-side h1 {
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+#hero .left-side .button {
+    margin-top: 40px;
+}
+
+#hero .left-side a {
+    background: #0d1418;
+    padding: 10px 50px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: .4rem;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    position: relative;
+    box-shadow: 0px 0px 30px #000;
+}
+
+#hero .left-side a span {
+    color: #bfbdbd;
+    transition: .8s;
+}
+
+#hero .left-side a:hover span {
+    color: #868686;
+}
+
+#hero .left-side a::after,
+#hero .left-side a::before {
+    content: '';
+    background: var(--mainColor);
+    height: 3px;
+    width: 0;
+    position: absolute;
+    transition: .8s;
+}
+
+#hero .left-side a span::after,
+#hero .left-side a span::before {
+    content: '';
+    background: var(--mainColor);
+    height: 0;
+    width: 3px;
+    position: absolute;
+    transition: 1s;
+}
+
+#hero .left-side a::after {
+    left: 0;
+    bottom: 0;
+}
+
+#hero .left-side a::before {
+    right: 0;
+    top: 0;
+}
+
+#hero .left-side a span::after {
+    right: 0;
+    bottom: 0;
+}
+
+#hero .left-side a span::before {
+    left: 0;
+    top: 0;
+}
+
+#hero .left-side a:hover::after,
+#hero .left-side a:hover::before {
+    width: 100%;
+}
+
+#hero .left-side a:hover span::after,
+#hero .left-side a:hover span::before {
+    height: 100%;
+}
+
+#hero .right-img  {
+    width: 250px;
+    border: 2px solid var(--mainColor);
+    border-radius: 50%;
+}
+
+#hero .right-img img {
+    width: 100%;
+}
+
+
+/***************** Services section *****************/
+#services {
+    margin-top: 50px;
+}
+
+#services .container {
+    flex-direction: column;
+}
+
+#services .services-bottom {
+    width: 100%;
+}
+
+#services .row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+#services .card {
+    width: 300px;
+    height: 400px;
+    margin: 50px 20px 0 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+    perspective: 700px;
+}
+
+#services .flip-box {
+    width: 100%;
+    height: 100%;
+    transition: .8s;
+    box-shadow: 0px 0px 20px 0px #000000;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+}
+
+#services .content {
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#services .front-card {
+    background: #20333e;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+}
+
+#services .front-card i {
+    color: #fff;
+    font-size: 100px;
+    margin-bottom: 30px;
+}
+
+#services .front-card .content h2 {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 0;
+}
+
+#services .back-card {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    background: var(--bodyColor);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+#services .back-card .content p {
+    line-height: 35px;
+}
+
+#services .back-card .back-icon {
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+#services .back-card .back-icon i {
+    margin-right: 10px;
+}
+
+#services .card:hover .flip-box {
+    transform: rotateY(-180deg);
+}
+
+
+
+/***************** Projects section *****************/
+#projects {
+    margin-top: 60px;
+}
+
+#projects .container {
+    flex-direction: column;
+}
+
+#projects .projects-bottom {
+    margin-top: 30px;
+}
+
+#projects .projects-info {
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#projects .projects-info:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+#projects .projects-left {
+    background: var(--bodyColor);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#projects .projects-left p {
+    padding: 30px;
+    color: #fff;
+    font-size: 25px;
+}
+
+#projects .projects-info img {
+    width: 100%;
+    height: 100%;
+    background: var(--bodyColor);
+    transition: .5s;
+    transform: scale(1);
+}
+
+#projects .projects-info img:hover {
+    transform: scale(1.1);
+}
+
+
+/***************** Responsiv Area *****************/
+@media screen and (max-width: 1000px) {
+    /***************** Header section *****************/
+    #header .nav-list ul {
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: var(--bodyColor);
+        z-index: 2;
+        transition: .5s;
+    }
+    #header .nav-list ul.active {
+        left: 0;
+    }
+
+    #header .nav-list ul li a {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        display: block;
+    }
+
+    #header .nav-list ul li a::after {
+        content: attr(data);
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%) scale(0);
+        font-size: 2rem;
+        color: #868686;
+        letter-spacing: 2rem;
+        z-index: -1;
+        transition: .5s;
+    }
+    
+    #header .nav-list ul li a:hover::after {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    #header .hamberger {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        margin: 20px;
+        padding: 10px;
+        top: 0;
+        right: 0;
+        position: absolute;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #header .hamberger .bar {
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        position: relative;
+    }
+
+    #header .hamberger .bar::before,
+    #header .hamberger .bar::after {
+        content: '';
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        left: 0;
+        position: absolute;
+        transition: .5s;
+    }
+
+    #header .hamberger .bar::before {
+        top: 8px;
+    }
+
+    #header .hamberger .bar::after {
+        bottom: 8px;
+    }
+
+    #header .hamberger.active .bar::before,
+    #header .hamberger.active .bar::after {
+        content: '';
+        width: 0;
+    }
+
+    /***************** Hero section *****************/
+    #hero .hero-content {
+        padding: 0 20px;
+    }
+
+    #hero .left-side h2 {
+        font-size: 25px;
+    }
+
+    #hero .left-side h1 {
+        font-size: 40px;
+        margin: 15px 0;
+    }
+
+    #hero .left-side p {
+        font-size: 13px;
+    }
+
+    #hero .left-side .button {
+        margin-top: 30px;
+    }
+
+    #hero .left-side a {
+        padding: 10px 50px;
+        font-size: 20px;
+        letter-spacing: .2rem;
+    }
+
+    #hero .right-img  {
+        width: 200px;
+    }
+
+    /***************** Services section *****************/
+    /* #services .card {
+        width: 200px;
+        height: 300px;
+    }
+
+    #services .front-card .content h2 {
+        font-size: 15px;
+    }
+
+    #services .back-card .content {
+        padding: 10px;
+    }
+
+    #services .back-card .back-icon {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+    
+    #services .back-card .back-icon i {
+        margin-right: 10px;
+    } */
+}
+
+@media screen and (max-width: 1030px) {
+    #projects .projects-info {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    /***************** Hero section *****************/
+    #hero .hero-content {
+        padding: 0 5px;
+    }
+
+    #hero .left-side h2 {
+        font-size: 20px;
+    }
+
+    #hero .left-side h1 {
+        font-size: 30px;
+    }
+
+    #hero .left-side p {
+        font-size: 10px;
+    }
+
+    #hero .left-side a {
+        padding: 10px 50px;
+        font-size: 15px;
+        letter-spacing: .2rem;
+    }
+
+    #hero .right-img  {
+        width: 150px;
+    }
+
+    /***************** Services section *****************/
+    #services .services-head {
+        width: 70%;
+        text-align: center;
+    }
+    /*
+    #services .row {
+        flex-direction: column;
+    }
+    #services .card {
+        width: 300px;
+        height: 400px;
+        margin-bottom: 50px;
+    }
+    
+    #services .front-card .content h2 {
+        font-size: 20px;
+    }
+    
+    #services .back-card .content {
+        padding: 10px;
+    } */
+}
+
+@media screen and (max-width: 570px) {
+    /***************** Hero section *****************/
+    #hero .hero-content {
+        height: auto;
+        padding: 0 5px;
+        flex-direction: column-reverse;
+    }
+
+    #hero .left-side {
+        width: 80%;
+        padding: 20px;
+    }
+
+    #hero .left-side h2 {
+        font-size: 18px;
+    }
+
+    #hero .left-side h1 {
+        font-size: 30px;
+    }
+
+    #hero .left-side a {
+        padding: 10px 50px;
+        font-size: 13px;
+        letter-spacing: .2rem;
+    }
+
+    #hero .right-side {
+        margin: 0 0 15px 0;
+    }
+
+    #hero .right-img {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    /***************** Header section *****************/
+    #header .brand a {
+        font-size: 1rem;
+    }
+
+    #header .hamberger {
+        width: 40px;
+        height: 40px;
+        margin: 15px;
+        padding: 7px;
+    }
+    
+    /***************** Hero section *****************/
+    #hero .left-side {
+        padding: 20px;
+    }
+
+    #hero .left-side h2 {
+        font-size: 14px;
+    }
+
+    #hero .left-side h1 {
+        font-size: 20px;
+    }
+
+    #hero .left-side p {
+        font-size: 7px;
+    }
+
+    #hero .left-side a {
+        padding: 10px 20px;
+        font-size: 10px;
+        letter-spacing: .2rem;
+    }
+
+    /***************** Services section *****************/
+    /* .section-header {
+        font-size: 30px;
+    }
+
+    .section-header::after {
+        width: 60px;
+     }
+
+    #services .services-head {
+        width: 90%;
+        text-align: center;
+        margin-bottom: 3%;
+    }
+
+    #services .card {
+        width: 200px;
+        height: 300px;
+        margin-bottom: 50px;
+    }
+            
+    #services .front-card .content h2 {
+        font-size: 20px;
+    }
+            
+    #services .back-card .content {
+        padding: 10px;
+    } */
+}
+
+@media screen and (max-width: 260px) {
+    /***************** Header section *****************/
+    #header .brand a {
+        font-size: 1rem;
+    }
+
+    #header .hamberger {
+        width: 40px;
+        height: 40px;
+        margin: 15px;
+        padding: 7px;
+    }
+    
+    /***************** Hero section *****************/
+    #hero .left-side {
+        padding: 20px;
+    }
+
+    #hero .left-side h2 {
+        font-size: 10px;
+    }
+
+    #hero .left-side h1 {
+        font-size: 13px;
+    }
+
+    #hero .left-side p {
+        font-size: 4px;
+    }
+
+    #hero .left-side a {
+        padding: 10px 20px;
+        font-size: 7px;
+        letter-spacing: .2rem;
+    }
+
+    /***************** Services section *****************/
+    .section-header {
+        font-size: 30px;
+    }
+
+    .section-header::after {
+        width: 60px;
+     }
+
+    #services .services-head {
+        width: 90%;
+        text-align: center;
+        margin-bottom: 3%;
+    }
+
+    #services .card {
+        width: 150px;
+        height: 200px;
+        margin-bottom: 50px;
+    }
+            
+    #services .front-card .content h2 {
+        font-size: 20px;
+    }
+            
+    #services .back-card .content {
+        padding: 10px;
+    }
+}
